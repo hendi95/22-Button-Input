@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Keyboard from "./Keyboard";
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      textInputBox: "",
+    };
+  }
+
+   delete = () => {
+    this.setState({
+      textInputBox: "",
+    });
+  };
+
+  backspace = () => {
+    this.setState({
+      textInputBox: this.state.textInputBox.slice(0, -1),
+    });
+  };
+
+  onClick = (btn) => {
+    if (btn === "Del") {
+      this.delete();
+    } else if (btn === "Back") {
+      this.backspace();
+    } else {
+      this.setState({
+        textInputBox: this.state.textInputBox + btn,
+      });
+    }
+  };
+ 
+  render() {
+    return (
+      <div>
+        <div className="number-body">
+          <Keyboard onClick={this.onClick} textInputBox={this.state.textInputBox} />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
+

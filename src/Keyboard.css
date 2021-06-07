@@ -1,0 +1,30 @@
+
+  .btn-group {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	background-color: #2196F3;
+	padding: 10px;
+	margin: 10px;
+	text-align: center;
+  }
+
+  button:hover {
+	  background-color: lightblue;
+	  cursor: pointer;
+  }
+
+  .btn-number {
+	background-color: rgba(255, 255, 255, 0.8);
+	border: 1px solid rgba(0, 0, 0, 0.8);
+	padding: 20px;
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 10px;
+	margin-left: 20px;
+	align-items: center;
+  }
+
+  .number-body {
+	max-width: 400px;
+	margin: auto;
+  }
